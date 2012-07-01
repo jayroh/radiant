@@ -44,7 +44,7 @@ module Radiant
     # If two arguments are given, the second is taken to be the full extension name.
     #
     def self.from_path(path, name=nil)
-      name = path if name.blank?
+      name = path if name.nil?
       name = File.basename(name).gsub(/^radiant-|-extension(-[\d\.a-z]+|-[a-z\d]+)*$/, '')
       new(:name => name, :path => path)
     end
